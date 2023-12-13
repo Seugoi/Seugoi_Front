@@ -8,14 +8,14 @@ body{
     position: fixed;
     width: 100%;
     background-color: var(--white);
-    z-index: 999;
+    z-index: 9999;
 }
 .logo{
     background-image: url(/img/logo.png);
     background-size: cover;
     width: 25px;
     height: 25px;
-    margin: 4.5vh auto 1.5vh auto;
+    margin: 4vh auto 0.5vh auto;
     /* position: fixed; */
     display: flex;
 }
@@ -23,8 +23,32 @@ nav{
     display: flex;
     align-items: center;
     column-gap: 1rem;
-    padding: 6vw;
+    padding: 5vw;
     /* margin-top: 20vw; */
+    background-color: var(--white);
+}
+.search-window{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.487);
+    /* opacity: 0; */
+    z-index: 999;
+    /* top: -1; */
+}
+.search-result{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 102vw;
+    height: 50vh;
+    top: -1vw;
+    background-color: var(--white);
+}
+.result-study-container{
+
 }
 .bx-menu{
     font-size: 1.8rem;
@@ -37,11 +61,12 @@ nav{
     display: flex;
     border: 1px solid #E4E4E4;
     height: 45px;
-    width: 80vw;
+    width: 90vw;
     border-radius: 5px;
     align-items: center;
     justify-content: space-between;
     padding-right: 1rem;
+    transition: all 0.5s ease;
 }
 .search-box{
     border: 0;
@@ -50,19 +75,29 @@ nav{
     padding-left: 1rem;
     outline: none;
     background-color: transparent;
+    transition: all 0.5s ease;
 }
 .main-comment{
     font-size: 1.8rem;
     font-weight: bolder;
     padding: 2vw 6vw;
 }
+.scroll-user-study-container{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    align-items: center;
+    height: 42vw;
+    transition: all 0.5s ease;
+    margin-top: 18vw;
+}
 .user-study-container{
     display: flex;
-    padding: 2vw 6vw;
+    padding: 15px 26px;
     overflow-x: scroll;
     column-gap: 4vw;
     flex-wrap: nowrap;
-    margin-top: 25vw;
 }
 .user-study-box{
     width: fit-content;
@@ -73,7 +108,7 @@ nav{
     column-gap: 5vw;
     height: 120px;
     width: 78vw;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .user-study-info{
     display: flex;
@@ -118,39 +153,72 @@ nav{
     border-radius: 100px;
 }
 .today-comment{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: start;
     background-color: var(--gray);
-    padding: 15px;
-    width: 80%;
+    padding: 15px 0px 15px 15px;
+    width: 83%;
     margin: 5vw auto;
-    column-gap: 5px;
+    overflow: hidden;
+    /* column-gap: 5px; */
+    border-radius: 5px;
 }
 .wise-saying{
     color: #29A037;
     height: 20px;
     width: max-content;
     white-space: nowrap;
+    z-index: 9;
+    background-color: var(--gray);
 }
 
-/* @keyframes moveText{
+@keyframes moveText{
     from {
         transform: translateX(-100%);
     }
     to{
         transform: translateX(100%);
     }
-} */
-.today-wise-saying{
-    /* position: absolute; */
-    max-width: 58vw;
-    overflow-x: scroll;    
-    white-space: nowrap;
-    /* transition: moveText 300ms ease; */
-    /* animation: moveText 10000ms linear infinite; */
 }
-
+.today-wise-saying{
+    position: relative;
+    /* max-width: 59vw; */
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    overflow: hidden;
+    height: 20px;
+    left: -1px;
+}
+.wish-hidden-left{
+    position: absolute;
+    background: linear-gradient(90deg, var(--gray), var(--gray), transparent);
+    /* background-color: #29A037; */
+    width: 7vw;
+    height: 13vw;
+    z-index: 9;
+    left: 0;
+    /* top: 0; */
+}
+.hidden-container{
+    display: flex;
+}
+.wish-hidden-right{
+    position: absolute;
+    background: linear-gradient(90deg, transparent, var(--gray), var(--gray));
+    /* background-color: #29A037; */
+    width: 8vw;
+    height: 20px;
+    z-index: 9vw;
+    right: 0;
+    /* top: 0; */
+}
+.text{
+    animation: moveText 15s linear infinite;
+    margin: 0;
+}
 .new-study{
     display: flex;
     align-items: center;
@@ -165,12 +233,14 @@ nav{
     position: relative;
     display: flex;
     column-gap: 8px;
-    padding: 2vw 9vw 0vw 6vw;
+    padding: 0vw 9vw 0vw 6vw;
     overflow-x: scroll;
 }
 .category-container{
     position: relative;
     display: flex;
+    align-items: center;
+    margin-top: 1vw;
 }
 .category-hidden{
     position: absolute;
@@ -205,24 +275,48 @@ nav{
 .study-box{
     display: flex;
     flex-direction: column;
-    border-radius: 0 0 10px 10px;
-    border: 1px solid var(--gray);
+    /* border: 1px solid var(--gray); */
 }
 .study-img{
     height: 20vw;
     width: 41vw;
-    background-color: #29A037;
+    background-color: #29a03713;
     border-radius: 10px 10px 0 0;
 }
 .study-info{
-    padding: 2vw;
+    /* padding: 2vw;
     display: flex;
     flex-direction: column;
     row-gap: 1vw;
+    background-color: #29A037;
+    border: 20px solid transparent;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to top, #aeaeae51 0%, white 100%) 20 round;
+    border-image-slice: 1; */
+    position: relative;
+    height: 13vw;
+}
+.study-info::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    border-radius: 0 0 10px 10px; /*1*/
+    border: 1px solid transparent; /*2*/
+    background: linear-gradient(0deg,#aeaeae51 0%, white 100%) border-box; /*3*/
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+          mask-composite: exclude; /*5*/
 }
 .info-box{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 1vw auto;
 }
 .study-name{
     font-size: 1.1rem;
@@ -231,7 +325,9 @@ nav{
 .study-category-container{
     display: flex;
     column-gap: 1vw;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    width: 90%;
+    margin: 0 auto;
 }
 .study-category{
     color: var(--gray-main);
@@ -239,13 +335,6 @@ nav{
 .study-d-day{
     color: var(--primary-color);
 }
-.select-box{
-    width: fit-content;
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    padding: 4vw;
-    display: flex;
-    column-gap: 5vw;
-    height: 120px;
-    width: 80vw;
+.user-study-box.select-box{
+    opacity: 1;
 }
