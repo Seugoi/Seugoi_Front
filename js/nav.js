@@ -1,0 +1,1 @@
+const navToggle = nav_toggle.getElementsByTagName("i")

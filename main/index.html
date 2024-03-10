@@ -13,23 +13,89 @@
     <div class="logo-container">
         <img src="/img/logo.png" alt="" class="logo" onclick="location.html='/main/index.html'">
         <nav class="navbar">
-            <i class='bx bx-menu'></i>
+            <div class="nav-toggle" id="nav_toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+            <!-- <i class='bx bx-lg-x'></i> -->
             <div class="search-container">
                 <input type="text" placeholder="스터디를 검색해보세요!" class="search-box" onfocus="this.placeholder =''" onblur="this.placeholder='스터디를 검색해보세요!'">
                 <i class='bx bx-search'></i>
             </div>
-        </nav>
+        </div>
         
         <div class="search-window">
             <div class="search-result">
-                <div class="result-study-container">
-                    <div class="result-study-box"></div>
-                    <div class="result-study-box"></div>
-                    <div class="result-study-box"></div>
-                    <div class="result-study-box"></div>
-                    <div class="result-study-box"></div>
+                <div class="result-study">
+                    <p class="populer-result result-text">인기 카테고리</p>
+                    <div class="search-category-container">
+                        <div class="search-category">#java</div>
+                        <div class="search-category">#javascript</div>
+                        <div class="search-category">#js</div>
+                        <div class="search-category">#dlsij</div>
+                        <div class="search-category">#lsdjglj</div>
+                        <div class="search-category">#slkdjgla</div>
+                        <div class="search-category">#saldjg</div>
+                        <div class="search-category">#sldjg</div>
+                    </div>
+                    <p class="view-study result-text">최근 조회한 스터디</p>
+                    <div class="result-study-container">
+                        <div class="result-study-box">
+                            <div class="result-study-img"></div>
+                            <div class="result-study-info">
+                                <div class="result-info-box">
+                                    <div class="result-study-name">java study</div>
+                                    <div class="result-study-d-day">D-40</div>
+                                </div>
+                                <div class="result-study-category-container">
+                                    <div class="result-study-category">#java</div>
+                                    <div class="result-study-category">#코딩</div>
+                                    <div class="result-study-category">#개발자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-study-box">
+                            <div class="result-study-img"></div>
+                            <div class="result-study-info">
+                                <div class="result-info-box">
+                                    <div class="result-study-name">java study</div>
+                                    <div class="result-study-d-day">D-40</div>
+                                </div>
+                                <div class="result-study-category-container">
+                                    <div class="result-study-category">#java</div>
+                                    <div class="result-study-category">#코딩</div>
+                                    <div class="result-study-category">#개발자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-study-box">
+                            <div class="result-study-img"></div>
+                            <div class="result-study-info">
+                                <div class="result-info-box">
+                                    <div class="result-study-name">java study</div>
+                                    <div class="result-study-d-day">D-40</div>
+                                </div>
+                                <div class="result-study-category-container">
+                                    <div class="result-study-category">#java</div>
+                                    <div class="result-study-category">#코딩</div>
+                                    <div class="result-study-category">#개발자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-study-box">
+                            <div class="result-study-img"></div>
+                            <div class="result-study-info">
+                                <div class="result-info-box">
+                                    <div class="result-study-name">java study</div>
+                                    <div class="result-study-d-day">D-40</div>
+                                </div>
+                                <div class="result-study-category-container">
+                                    <div class="result-study-category">#java</div>
+                                    <div class="result-study-category">#코딩</div>
+                                    <div class="result-study-category">#개발자</div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-                <div class="result-study-name"></div>
             </div>
         </div>
     </div>
@@ -208,38 +274,16 @@
             </div>
         </div>
     </div>
-    <div class="study-container">
-        <div class="study-box">
-            <div class="study-img"></div>
-            <div class="study-info">
-                <div class="info-box">
-                    <div class="study-name">java study</div>
-                    <div class="study-d-day">D-40</div>
-                </div>
-                <div class="study-category-container">
-                    <div class="study-category">#java</div>
-                    <div class="study-category">#코딩</div>
-                    <div class="study-category">#개발자</div>
-                </div>
-            </div>
-        </div>
-        <div class="study-box">
-            <div class="study-img"></div>
-            <div class="study-info">
-                <div class="info-box">
-                    <div class="study-name">java study</div>
-                    <div class="study-d-day">D-40</div>
-                </div>
-                <div class="study-category-container">
-                    <div class="study-category">#java</div>
-                    <div class="study-category">#코딩</div>
-                    <div class="study-category">#개발자</div>
-                </div>
-            </div>
+    <div class="plus-contianer">
+        <hr>
+        <div class="plus">
+            <p class="plus-text">더보기</p>
+            <i class='bx bxs-chevron-down'></i>
         </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="/js/nav.js"></script>
 </body>
 </html>
