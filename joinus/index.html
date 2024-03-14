@@ -14,28 +14,29 @@
         </div>
         <div id="joinus-box">
             아이디 <br>
-            <input type="text" placeholder="아이디 혹은 이메일을 입력해주세요" style="width: 316px"> <br>
+            <input id="input-id" type="text" placeholder="아이디 혹은 이메일을 입력해주세요" style="width: 316px"> <br>
             이메일 <br>
-            <input type="text" placeholder="이메일을 입력해주세요" style="width: 180px;"> @
-            <select style="width: 110px;">
-                <option>직접입력</option>
-                <option value="1">naver.com</option>
-                <option value="2">daum.net</option>
-                <option value="3">hanmail.net</option>
+            <input id="input-email" type="text" placeholder="이메일을 입력해주세요" style="width: 180px;"> @
+            <select id="domain-select" style="width: 110px;">
+                <option id="emailSeBox" value="direct">직접입력</option>
+                <option value="naver.com">naver.com</option>
+                <option value="daum.net">daum.net</option>
+                <option value="hanmail.net">hanmail.net</option>
             </select> <br>
             비밀번호 <br>
-            <input type="password" placeholder="8자~16자의 비밀번호를 입력해주세요" style="width: 316px"> <br>
+            <input id="input-pw" type="password" placeholder="8자~16자의 비밀번호를 입력해주세요" style="width: 316px"> <br>
             직업 <br>
-            <select style="width: 328px;">
-                <option>직접입력</option>
-                <option value="1">학생</option>
-                <option value="2">회사원</option>
-                <option value="3">기타</option>
+            <select id="job-select" style="width: 328px;">
+                <option id="jobSeBox" value="direct">직접입력</option>
+                <option value="학생">학생</option>
+                <option value="회사원">회사원</option>
+                <option value="기타">기타</option>
             </select>
         </div>
-        <div id="joinus-button">
-            <input type="submit" value="회원가입">
-        </div>
+        <button id="joinBtn">회원가입</button>
     </div>
+    <script src="./js/join.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
