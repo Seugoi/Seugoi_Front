@@ -14,22 +14,23 @@
         </div>
         <div id="login-box">
             아이디 <br>
-            <input type="text" placeholder="아이디 혹은 이메일을 입력해주세요"> <br>
+            <input id="input-id" type="text" placeholder="아이디 혹은 이메일을 입력해주세요"> <br>
             비밀번호 <br>
-            <input type="password" placeholder="8자~16자의 비밀번호를 입력해주세요"> <br>
+            <input id="input-pw" type="password" placeholder="8자~16자의 비밀번호를 입력해주세요"> <br>
         </div>
         <div id="login-menu">
             <ul>
-                <a href="#"><li>회원가입</li></a>
+                <a href="../joinus/index.html"><li>회원가입</li></a>
                 |
                 <a href="#"><li>아이디 찾기</li></a>
                 |
                 <a href="#"><li>비밀번호 찾기</li></a>
             </ul>
         </div>
-        <div id="login-button">
-            <input type="submit" value="로그인하기 →">
-        </div>
+        <button id="loginBtn">로그인하기 →</button>
     </div>
+    <script src="./js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>

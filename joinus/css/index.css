@@ -68,19 +68,16 @@
     list-style-type: none;
 }
 
-#joinus-button {
+button {
     display: flex;
-    margin-top: 70px;
     align-items: center;
     justify-content: center;
-}
-
-#joinus-button input {
     width: 154px;
     height: 33px;
     border: none;
     color: #fff;
     font-size: 16px;
+    margin-top: 70px;
     border-radius: 20px;
     background-color: #47BE55;
 }
