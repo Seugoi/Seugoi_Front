@@ -3,7 +3,6 @@ const pwInput = document.getElementById('input-pw');
 const loginBtn = document.getElementById('loginBtn');
 
 if(loginBtn) {
-    console.log(true);
     loginBtn.onclick = () => {
         let id = idInput.value;
         let pw = pwInput.value;
@@ -26,6 +25,4 @@ if(loginBtn) {
                 alert("로그인 실패하였습니다.");
             })
     }
-} else {
-    console.log(false);
 }
