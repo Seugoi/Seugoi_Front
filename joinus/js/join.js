@@ -35,13 +35,14 @@ if(joinBtn) {
         };
         console.log(userData);
 
-        // axios.post("http://localhost:3008/join", userData)
-        // .then(response => {
-        //     console.log('Registration successful:', response.data);
-        //     window.open('/login/', '_top');
-        // })
-        // .catch(error => {
-        //     console.error('Registration failed:', error);
-        // });
+        // 백엔드 서버로 POST 요청 보내기
+        axios.post("http://localhost:3008/user/join", userData)
+            .then(response => {
+                console.log("회원가입 성공");
+                window.location.href = "../login/index.html";
+            })
+            .catch(error => {
+                console.error("회원가입 실패 : " + error);
+            });
     };
 }
