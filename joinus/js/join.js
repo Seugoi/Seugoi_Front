@@ -26,7 +26,8 @@ if(joinBtn) {
         } else {
             job = jobSe.value;
         }
-    
+
+        
         const userData = {
             user_id: id,
             user_pw: pw,
@@ -34,15 +35,31 @@ if(joinBtn) {
             user_job: job
         };
         console.log(userData);
-
-        // 백엔드 서버로 POST 요청 보내기
-        axios.post("http://localhost:3008/user/join", userData)
-            .then(response => {
-                console.log("회원가입 성공");
-                window.location.href = "../login/index.html";
-            })
-            .catch(error => {
-                console.error("회원가입 실패 : " + error);
-            });
+        
+        // 공백 있을 시 alert창 띄우기
+        if (id === "") {
+            alert("아이디를 입력해주세요.");
+        } else if(pw === "") {
+            alert("비밀번호를 입력해주세요");
+        } else if(email === "") {
+            alert("이메일을 입력해주세요."); 
+        } else if(job === "") {
+            alert("직업을 선택해주세요.");
+        } else {
+            // 백엔드 서버로 POST 요청 보내기
+            axios.post("http://localhost:3008/user/join", userData)
+                .then(response => {
+                    console.log("회원가입 성공");
+                    window.location.href = "../login/index.html";
+                })
+                .catch(error => {
+                    console.error("회원가입 실패 : " + error);
+                    if (error.response && error.response.data) {
+                        alert(error.response.data.error);
+                    } else {
+                        alert("회원가입 실패");
+                    }
+                });
+        }
     };
 }
